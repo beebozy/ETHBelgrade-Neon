@@ -10,6 +10,7 @@ module.exports = {
             {
                 version: '0.8.28',
                 settings: {
+                    evmVersion: "cancun",
                     viaIR: true,
                     optimizer: {
                         enabled: true,
@@ -34,32 +35,41 @@ module.exports = {
         network: "neonevm",
         chainId: 245022926,
         urls: {
-          apiURL: "https://neon-devnet.blockscout.com/api",
-          browserURL: "https://neon-devnet.blockscout.com",
+          apiURL: "https://devnet-api.neonscan.org/hardhat/verify",
+          browserURL: "https://devnet.neonscan.org",
         },
       },
       {
         network: "neonevm",
         chainId: 245022934,
         urls: {
-          apiURL: "https://neon.blockscout.com/api",
-          browserURL: "https://neon.blockscout.com",
+          apiURL: "https://api.neonscan.org/hardhat/verify",
+          browserURL: "https://neonscan.org",
         },
       },
     ],
-    },
+  },
   networks: {
+    curvestand: {
+      url: "https://curve-stand.neontest.xyz",
+      accounts: [process.env.PRIVATE_KEY_OWNER, process.env.PRIVATE_KEY_USER_1, process.env.PRIVATE_KEY_USER_2, process.env.PRIVATE_KEY_USER_3],
+      allowUnlimitedContractSize: false,
+      gasMultiplier: 2,
+      maxFeePerGas: 10000000,
+      maxPriorityFeePerGas: 5000000
+    },
     neondevnet: {
       url: "https://devnet.neonevm.org",
-      accounts: [process.env.PRIVATE_KEY_OWNER],
+      accounts: [process.env.PRIVATE_KEY_OWNER, process.env.PRIVATE_KEY_USER_1, process.env.PRIVATE_KEY_USER_2, process.env.PRIVATE_KEY_USER_3],
       chainId: 245022926,
       allowUnlimitedContractSize: false,
-      gas: "auto",
-      gasPrice: "auto",
+      gasMultiplier: 2,
+      maxFeePerGas: '10000000000000000',
+      maxPriorityFeePerGas: '5000000000000000'
     },
     neonmainnet: {
       url: "https://neon-proxy-mainnet.solana.p2p.org",
-      accounts: [process.env.PRIVATE_KEY_OWNER],
+      accounts: [process.env.PRIVATE_KEY_OWNER, process.env.PRIVATE_KEY_USER_1, process.env.PRIVATE_KEY_USER_2, process.env.PRIVATE_KEY_USER_3],
       chainId: 245022934,
       allowUnlimitedContractSize: false,
       gas: "auto",
@@ -67,6 +77,6 @@ module.exports = {
     },
   },
   mocha: {
-      timeout: 2800000
+    timeout: 5000000
   }
 };
