@@ -11,7 +11,7 @@ A cross-chain DAO voting system that combines Ethereum/Solidity smart contracts 
 ****Deployed Contract ****
 
 ───────────────────────────────
-│ 0x180A435D519BFf48cE05898c4809a33942ACf6c5 │
+│ https://devnet.neonscan.org/address/0x5b0a0f4a8f2e7e1151cc43a464af829ad5618a0a │
 ───────────────────────────────
 
 - 🗳️ **Proposal Management**: Create and manage DAO proposals with configurable voting periods
