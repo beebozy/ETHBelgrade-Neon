@@ -42,7 +42,9 @@ The main contract that manages:
 Handles interactions with Solana's Metaplex program for token metadata.
 
 
-### CallSPLToken.sol
+### CallSPLToken.
+
+Manages SPL token operations including mint creation, token transfers, approvals, and account management, inheriting from CallMetaplexProgram.
 
 
 
